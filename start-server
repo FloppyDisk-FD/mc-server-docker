@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+java -Xmx $MEMORY_MAX -Xms $MEMORY_MIN -jar server.jar
