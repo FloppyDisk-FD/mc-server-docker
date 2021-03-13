@@ -1,3 +1,5 @@
+name: Docker Image CI
+
 on:
   push:
     branches: [ main ]
@@ -27,6 +29,7 @@ jobs:
       with: 
         images: heremoryoo/mc-server
         tag-semver: |
+            {{version}}
             {{major}}.{{minor}}
     
     - name: Set up Docker Buildx
@@ -44,4 +47,4 @@ jobs:
         labels: ${{ steps.docker_meta.outputs.labels }}
         pull: true
         platforms: linux/amd64,linux/arm64
-        push: ${{ github.event_name != 'push tag' }}
+        push: ${{ github.event_name != 'push_tag' }}
