@@ -29,8 +29,8 @@ jobs:
       with: 
         images: heremoryoo/mc-server
         tag-semver: |
-            {{version}}
-            {{major}}.{{minor}}
+            {{raw}}
+        tag-latest: true
     
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
